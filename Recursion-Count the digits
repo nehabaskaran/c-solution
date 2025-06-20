@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int countDigits(long long n) {
+    if (n == 0) return 0;
+    return 1 + countDigits(n / 10);
+}
+
+int main() {
+    long long num;
+    scanf("%lld", &num);
+
+    if (num == 0) {
+        printf("The Count the digits: 1\n");
+    } else {
+        printf("The Count the digits: %d\n", countDigits(num));
+    }
+
+    return 0;
+}
