@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class HollowSquare {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                // Print star at borders
+                if (i == 1 || i == n || j == 1 || j == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+                // Print space after each star or space except last column
+                if (j != n) System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
