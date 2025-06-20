@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    int a,sum=0;
+    scanf("%d",&a);
+    for(int i=1;i<a;i++)
+    {
+        if(a%i==0)
+        {
+            sum+=i;
+        }
+    }
+    /*if(a>99)
+        printf("Invalid Number");
+    else*/
+    if(a<sum)
+        printf("Abundant Number");
+    else
+        printf("Not Abundant Number");
+    return 0;
+}
