@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int a,b,s;
+    scanf("%d\n%d\n",&a,&b);
+    printf("The First value before Swapping:%d\nThe Second value before Swapping:%d\n",a,b);
+    s=a;
+    a=b;
+    b=s;
+    printf("The First value after Swapping:%d\nThe Second value after Swapping:%d",a,b);
+    return 0;
+}
