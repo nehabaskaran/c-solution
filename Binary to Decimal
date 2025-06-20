@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+
+int main() {
+    long long binary;
+    int decimal = 0, base = 1, remainder;
+
+    // Read the binary number
+    scanf("%lld", &binary);
+
+    // Process each digit from right to left
+    while (binary > 0) {
+        remainder = binary % 10;
+        decimal += remainder * base;
+        base *= 2;
+        binary /= 10;
+    }
+
+    // Print the decimal value
+    printf("%d\n", decimal);
+
+    return 0;
+}
+
