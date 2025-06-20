@@ -1,0 +1,20 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int a,r,y;
+    scanf("%d\n%d\n%d\n",&a,&r,&y);
+    float i,aa,d,f;
+    i=(a*r*y)/100;
+    aa=a+i;
+    d=0.02*i;
+    f=aa-d;
+    printf("%.2f\n%.2f\n%.2f\n%.2f\n",i,aa,d,f);
+    return 0;
+}
