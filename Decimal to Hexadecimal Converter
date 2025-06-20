@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+int main() {
+    int decimal;
+
+    // Read the decimal number
+    scanf("%d", &decimal);
+
+    // Print hexadecimal using %X format specifier
+    printf("Hexadecimal number is : %X\n", decimal);
+
+    return 0;
+}
