@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int isVowel(char c) {
+    c = (c >= 'A' && c <= 'Z') ? c + 32 : c; // convert uppercase to lowercase
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+
+int main() {
+    char str[200];
+    fgets(str, sizeof(str), stdin);
+
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (isVowel(str[i]))
+            count++;
+    }
+
+    printf("%d\n", count);
+    return 0;
+}
