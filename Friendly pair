@@ -1,0 +1,35 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+
+// Function to calculate sum of divisors
+int sum_of_divisors(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0)
+            sum += i;
+    }
+    return sum;
+}
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+
+    int sum_a = sum_of_divisors(a);
+    int sum_b = sum_of_divisors(b);
+
+    // Compare abundancy index
+    if ((float)sum_a / a == (float)sum_b / b)
+        printf("Friendly Pair\n");
+    else
+        printf("Not Friendly Pair\n");
+
+    return 0;
+}
