@@ -1,0 +1,25 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    float a,b;
+    scanf("%f\n%f",&a,&b);
+    float c=(b/100);
+    float d=a/(c*c);
+    //printf("%f",d);
+    if(d<18.5)
+        printf("You are underweight. Have an apple daily.");
+    else if(d>=18.5&&d<=24.9)
+        printf("You are normal. Go walking daily and maintain it.");
+    else if(d>=25&&d<=29.9)
+        printf("You are overweight. Go to Gym daily.");
+    else
+        printf("You are obese. You need to see a doctor.");
+    return 0;
+}
