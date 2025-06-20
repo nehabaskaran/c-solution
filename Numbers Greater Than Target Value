@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main() {
+    int size, target, i, sum = 0, count = 0;
+    scanf("%d", &size);
+
+    int arr[size];
+
+    for (i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    scanf("%d", &target);
+    for( i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+
+    printf("The Target values are ");
+
+    for (i = size-1; i>=0; i--) {
+        if (arr[i] > target) {
+            printf("%d ", arr[i]);
+            sum += arr[i];
+            count++;
+        }
+    }
+
+    if (count > 0) {
+        double average = (double)sum / count;
+        printf("\nsum of value is %d\n", sum);
+        printf("Average of the value is %.1f\n", average);
+    } else {
+        printf("\nNo values are greater than the target.\n");
+    }
+
+    return 0;
+}
