@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main() {
+    float speed, distance, time;
+    
+    // Read input values
+    scanf("%f", &speed);    // speed in miles/hour
+    scanf("%f", &distance); // distance in miles
+    scanf("%f", &time);     // time in seconds
+
+    // Convert speed from miles/hour to miles/second
+    float speed_per_second = speed / 3600.0;
+
+    // Calculate time needed to reach the light
+    float time_needed = distance / speed_per_second;
+
+    // Compare with available time
+    if (time_needed < time)
+        printf("Yes\n");
+    else
+        printf("No\n");
+
+    return 0;
+}
