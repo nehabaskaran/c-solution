@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+void sortDesc(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+            if (arr[i] < arr[j]) {
+                int t = arr[i];
+                arr[i] = arr[j];
+                arr[j] = t;
+            }
+}
+
+void sortAsc(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+            if (arr[i] > arr[j]) {
+                int t = arr[i];
+                arr[i] = arr[j];
+                arr[j] = t;
+            }
+}
+
+int main() {
+    int length;
+    scanf("%d", &length);
+    int arr[length];
+
+    for (int i = 0; i < length; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int even[length], odd[length], e = 0, o = 0;
+
+    for (int i = 0; i < length; i++) {
+        if (i % 2 == 0)
+            even[e++] = arr[i];
+        else
+            odd[o++] = arr[i];
+    }
+
+    sortDesc(even, e);
+    sortAsc(odd, o);
+
+    int secondLargestEven = e >= 2 ? even[1] : even[0];
+    int secondSmallestOdd = o >= 2 ? odd[1] : odd[0];
+
+    int sum = secondLargestEven + secondSmallestOdd;
+    printf("Sum=%d\n", sum);
+
+    return 0;
+}
