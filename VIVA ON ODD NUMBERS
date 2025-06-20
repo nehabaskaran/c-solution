@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+
+
+int main() {
+    int num, correct = 0;
+    float score = 0.0;
+
+    printf("Enter the numbers\n");
+
+    while (correct < 3) {
+        scanf("%d", &num);
+        printf("%d\n", num);  // Echo the number
+
+        if (num < 0) {
+            score -= 1.0;
+            break;
+        } else if (num > 0 && num % 2 == 1) {
+            score += 1.0;
+            correct++;
+        } else if (num > 0 && num % 2 == 0) {
+            score -= 0.5;
+        }
+    }
+
+    printf("%.1f\n", score);
+
+    return 0;
+}
